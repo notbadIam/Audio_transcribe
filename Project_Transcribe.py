@@ -29,7 +29,7 @@ def transcribe_audio(audio):        # It first loads the tiny model of whisper a
 
 
 if __name__ == "__main__":
-    path_to_search = 'C:/Users/hp/PycharmProjects/practice/Songs'
+    path_to_search = 'Songs'        # Add The full path to audio directory here
     media_files, path_of_files = find_media(path_to_search)
     if not media_files:
         print("No media files found")
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         full_path = path_of_file + "/" + afile
         ext = afile.split(".")[-1]
         file_name = afile.removesuffix(ext)
-        output_dir = Path("C:/Users/hp/PycharmProjects/practice/Transcribed_audio")
+        output_dir = Path("Transcribed_audio")        #Add The full path to where you to want to store the json file
         output_file = output_dir / (file_name + "json")
         with open(output_file, "w") as file:
             # helps in creating json file and adding the keys and its values
